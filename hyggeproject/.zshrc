@@ -1,0 +1,1 @@
+alias hygge='export FLASK_APP=pybo;export FLASK_ENV=development;cd ${project 폴더 경로명};source ${activate 파일 경로명}'
