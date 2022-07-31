@@ -1,23 +1,12 @@
-version: "3.0"
+version: "3"
 
 services:
   web:
-    build: ./services/web
-    commend: python manage.py run -h 0.0.0.0
+    build: ./hygge/crudpackage
+    commend: python app.py run -h 0.0.0.0
     volumes:
-      - ./services/web/:/hygge/src/app/
+      - ./hygge/crudpackage/:/hygge/backend
     ports:
-      - "5000:5000"
+      - 5000:5000
     env_file:
       - ./.env.dev
-  db:
-    image: "postgres"
-    container_name: "postgres"
-    environment:
-      - POSTGRES_USER: ${DB_USER_ID}
-      - POSTGRES_PASSWORD: ${DB_USER_PASSWORD}
-      - POSTGRES_DB: "hyggedb"
-    volumes:
-      - ${POSTGRES_HOME_DIR}:/var/lib/postgresql/data
-    ports: 
-      - "54320:5432"
