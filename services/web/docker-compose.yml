@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py run -h 0.0.0.0
+    volumes:
+      - ./services/web/:/hygge/backend/services/web/project
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.dev
