@@ -36,4 +36,6 @@ docker-compose up -d (이미지 기반 컨테이너 실행)
 웹사이트 localhost:5000
 2. DB 접속
 docker-compose exec db psql --username=postgres --dbname=hygge_db
+** 오류가 발생하는 경우 로그 확인
+docker-compose logs -f
 ```
