@@ -20,9 +20,12 @@ activate   //가상환경 실행
 
 ```
 (python -m) pip install --upgrade pip
-pipp install flask
+pip install flask
 export FLASK_APP=project/__init__.py
 ** windows의 경우 export가 아니라 set 사용
+flask run
+
+-> gunicorn 사용의 경우 gunicorn --bind 0.0.0.0:5000 파일명:app
 ```
 
 - docker-compose로 flask 실행하기
