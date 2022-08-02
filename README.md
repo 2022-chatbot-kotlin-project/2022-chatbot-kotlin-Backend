@@ -31,6 +31,7 @@ export FLASK_APP=project/__init__.py
 cd (docker-compose 파일 위치)
 docker-compose build (이미지 빌드)
 docker-compose up -d (이미지 기반 컨테이너 실행)
+-> docker-compose up -d --build
 
 1. 플라스크 접속
 웹사이트 localhost:5000
