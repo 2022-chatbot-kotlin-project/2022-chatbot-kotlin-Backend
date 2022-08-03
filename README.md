@@ -36,6 +36,8 @@ docker-compose build (이미지 빌드)
 docker-compose up -d (이미지 기반 컨테이너 실행)
 -> docker-compose up -d --build
 
+-> 이미 컨테이너가 생성됐으면 docker-compose up 하면 사용가능
+
 1. 플라스크 접속
 웹사이트 localhost:5000
 2. DB 접속
