@@ -1,7 +1,7 @@
 from flask import Blueprint
 
-bp = Blueprint('test', __name__)
+bp = Blueprint('search', __name__)
 
-@bp.route("/hello")
+@bp.route("/map")
 def bptest():
     return "hi"
