@@ -1,5 +1,5 @@
 from flask import Flask
-from . import search
+from .search import search
 
 app = Flask(__name__)
 
