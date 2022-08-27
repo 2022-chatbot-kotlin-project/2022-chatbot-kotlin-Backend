@@ -31,12 +31,12 @@ flask run
 - docker-compose로 flask 실행하기
 
 ```
-1. docker-compose 파일 빌드
- - docker 처음 사용 시 이미지 빌드 필요
- - Dockerfile, docker-compose 파일이 있는 곳에서 다음 명령어 실행 (보통 프로젝트 디렉토리의 루트에 위치함)
-    - docker-compose up -d --build
- - 이미지 빌드가 이미 완료된 상태라면 docker-compose up 으로 컨테이너 실행 가능
- - 단, 소스코드 수정 시 재빌드 필요
+cd (docker-compose 파일 위치)
+docker-compose build (이미지 빌드)
+docker-compose up -d (이미지 기반 컨테이너 실행)
+-> docker-compose up -d --build
+
+-> 이미 컨테이너가 생성됐으면 docker-compose up 하면 사용가능
 
 1. 플라스크 접속
 웹사이트 localhost:5000
