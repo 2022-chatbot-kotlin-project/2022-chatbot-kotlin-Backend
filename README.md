@@ -1,11 +1,26 @@
+### 프로젝트 구조
 
-## 플라스크 프로젝트 사용방법
+```
+project
+│   └── __init__.py
+│   └── config.py
+├── chatbot
+│   └── __init__.py
+└── search
+   └── __init__.py
+   └── search.py
+```
+
+- python 3.3 버전 이후부터는 __init__.py 파일이 없어도 패키지로 인식하지만, 하위 버전 호환을 위해 생성
+- 향후 파일이 더 추가되면 추가할 예정
+
+### Flask 프로젝트 사용방법
 
 - 터미널 아나콘다 설치 후 진행
 - 가상환경 생성 및 실행
 
 ```
-cd C:\Users\20200\Desktop\hygge
+cd C:\\Users\\20200\\Desktop\\hygge
 mkdir services
 cd services
 mkdir web
@@ -13,7 +28,8 @@ cd web
 python -m venv hyggevenv   //가상환경 생성
 cd hyggevenv/Scripts
 activate   //가상환경 실행
-(hyggevenv) (base) C:\Users\20200\Desktop\hygge\services\web\hyggevenv\Scripts>
+(hyggevenv) (base) C:\\Users\\20200\\Desktop\\hygge\\services\\web\\hyggevenv\\Scripts>
+
 ```
 
 - 가상환경 내에서 flask 실행하기
@@ -26,6 +42,7 @@ export FLASK_APP=project/__init__.py
 flask run
 
 -> gunicorn 사용의 경우 gunicorn --bind 0.0.0.0:5000 파일명:app
+
 ```
 
 - docker-compose로 flask 실행하기
@@ -44,4 +61,5 @@ docker-compose up -d (이미지 기반 컨테이너 실행)
 docker-compose exec db psql --username=postgres --dbname=hygge_db
 ** 오류가 발생하는 경우 로그 확인
 docker-compose logs -f
+
 ```
