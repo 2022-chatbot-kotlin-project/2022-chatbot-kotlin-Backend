@@ -6,6 +6,8 @@ project
 │   └── config.py
 ├── chatbot
 │   └── __init__.py
+├── models
+│   └── __init__.py
 └── search
    └── __init__.py
    └── search.py
