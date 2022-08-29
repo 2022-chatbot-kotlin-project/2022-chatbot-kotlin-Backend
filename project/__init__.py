@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 from .search import search
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -25,31 +25,36 @@ class Shelter(db.Model):    # 향후 model.py로 모듈 분리
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
 
-    def __init__(self, region, name, address, tel1, tel2, target, category, people, url, latitude, longitude):
-        self.region = region
-        self.name = name
-        self.address = address
-        self.tel1 = tel1
-        self.tel2 = tel2
-        self.target = target
-        self.category = category
-        self.people = people
-        self.url = url
-        self.latitude = latitude
-        self.longitude = longitude
+    def __repr__(self):
+        return "category is %s" % (self.category)
 
+    @property
+    def serialize(self):
+        return {
+            'index': self.index,
+            'region': self.region,
+            'name': self.name,
+            'address': self.address,
+            'tel1': self.tel1,
+            'tel2': self.tel2,
+            'target': self.target,
+            'category': self.category,
+            'people': self.people,
+            'url': self.url,
+            'latitude': self.latitude,
+            'longitude': self.longitude
+        }
 
-
+        # return jsonify(data)
 
 @app.route('/')
 def hello():
     return "This is a root API page."
 
-@app.route("/map/<keyword>", methods=['GET'])    # 향후 search.py로 모듈 분리
+@app.route("/map/<keyword>")    # 향후 search.py로 모듈 분리
 def shelter_search(keyword):
-    shelter = Shelter.query.filter(Shelter.category == keyword)
-    # shelter_result = shelter_schema.dump(shelter)
-    # return shelter_result
+    shelters = Shelter.query.filter(Shelter.category == keyword).all()
+    return jsonify(shelters)
 
 if __name__ == '__main__':
     app.run(debug=True)
