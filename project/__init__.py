@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 app.config.from_object("project.config.Config")
 
+
 from project.views.map import bp as map_module
 # register Blueprint
 app.register_blueprint(map_module)
