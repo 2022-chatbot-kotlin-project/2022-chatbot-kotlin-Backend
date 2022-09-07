@@ -1,5 +1,6 @@
 from flask.cli import FlaskGroup
-from project import app, db
+from project import app
+from project.models.shelter import db
 
 cli = FlaskGroup(app)
 
