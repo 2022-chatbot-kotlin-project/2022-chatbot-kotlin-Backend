@@ -4,13 +4,15 @@
 project
 │   └── __init__.py
 │   └── config.py
+|   └── database.py
 ├── chatbot
 │   └── __init__.py
 ├── models
 │   └── __init__.py
-└── search
+|   └── shelter.py
+└── views
    └── __init__.py
-   └── search.py
+   └── map.py
 ```
 
 - python 3.3 버전 이후부터는 __init__.py 파일이 없어도 패키지로 인식하지만, 하위 버전 호환을 위해 생성
