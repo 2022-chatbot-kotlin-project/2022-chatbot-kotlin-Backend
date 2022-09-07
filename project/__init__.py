@@ -3,10 +3,11 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 app.config.from_object("project.config.Config")
 
-
+from project.chatbot.chatbot import bp as chatbot_module
 from project.views.map import bp as map_module
 # register Blueprint
 app.register_blueprint(map_module)
+app.register_blueprint(chatbot_module)
 
 
 @app.route('/')
