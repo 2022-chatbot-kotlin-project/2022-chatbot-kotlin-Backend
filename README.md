@@ -41,6 +41,7 @@ activate   //가상환경 실행
 ```
 (python -m) pip install --upgrade pip
 pip install flask
+pip install python-dotenv
 export FLASK_APP=project/__init__.py
 ** windows의 경우 export가 아니라 set 사용
 flask run
