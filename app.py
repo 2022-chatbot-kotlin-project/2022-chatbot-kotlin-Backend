@@ -1,21 +1,18 @@
+from xmlrpc.client import ProtocolError
 from flask import Flask, jsonify
 
 app = Flask(__name__)
-app.config.from_object("project.config.Config")
-
-from project.chatbot.chatbot import bp as chatbot_module
-from project.views.map import bp as map_module
-from project.views.search import bp as search_module
 # register Blueprint
+from apis.chatbot import bp as chatbot_module
+from apis.map_all import bp as map_module
+from apis.search import bp as search_module
 app.register_blueprint(map_module)
 app.register_blueprint(search_module)
 app.register_blueprint(chatbot_module)
 
-
-@app.route('/')
-def hello():
-    return "This is a root API page."
-
+@app.route('/', methods=['GET'])
+def root():
+    return "Docker test complete"
 
 @app.errorhandler
 def error_page(err):
@@ -23,4 +20,4 @@ def error_page(err):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)

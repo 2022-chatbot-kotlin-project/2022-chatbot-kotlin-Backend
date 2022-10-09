@@ -1,6 +1,9 @@
-from project.database import db
-db.metadata.clear()  # for redefine objects
+# from models.database import db
+# db.metadata.clear()  # for redefine objects
 
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 class Shelter(db.Model):
     __tablename__ = 'TB_SHELTER_INFO'

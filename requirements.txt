@@ -1,11 +1,3 @@
-Flask==2.0.2
-Flask-SQLAlchemy==2.5.1
-psycopg2-binary==2.8.6
-gunicorn==20.1.0
-marshmallow==3.17.1
-flask-restful==0.3.8
-marshmallow-sqlalchemy==0.28.1
-python-dotenv==0.20.0
-tensorflow
-pandas
-numpy
+flask
+gunicorn
+Flask-SQLAlchemy

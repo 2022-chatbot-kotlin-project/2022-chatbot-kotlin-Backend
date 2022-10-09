@@ -1,10 +1,9 @@
 import json
 from sqlalchemy import or_, and_
-
 from flask import Blueprint, request
-from project.models.shelter import Shelter
+from models.shelter import Shelter
 
-bp = Blueprint('search', __name__, url_prefix='/search')
+bp = Blueprint('search', __name__, url_prefix='/api/v1/search')
 
 
 @bp.route("/shelter")    # 향후 views.py로 모듈 분리
